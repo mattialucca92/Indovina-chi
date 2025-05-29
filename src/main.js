@@ -6,6 +6,7 @@ const rispostaCalciatore = document.getElementById("risposta-calciatore");
 const punteggioContainer = document.getElementById("punteggio-container");
 const messaggioContainer = document.getElementById("messaggio-container");
 const tentativiRimasti = document.getElementById("tentativi-rimasti");
+const btnStart = document.getElementById("start");
 const btnSend = document.getElementById("invia-risposta");
 const btnNextCard = document.getElementById("next-card");
 
@@ -198,3 +199,32 @@ const calciatori = [
   },
 ];
 
+let calciatoreCorrente;
+
+
+btnStart.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  //rimuovo una volta fatto start il div con le regole del gioco
+  const element = document.getElementById("start-game");
+  element.style.display = "none";
+
+
+  //scelgo un numero randomico nel mio array di oggetti, dopodichè creo una variabile per inserire il giocatore randomico
+  const randomCalciatore = Math.floor(Math.random() * calciatori.length);
+  const calciatoreCorrente = calciatori[randomCalciatore];
+
+
+  //creo una card che visualizza solo l'immagine sfocata del calciatore, una volta che il calciatore verrà indovinato la card verrà mostrata nella sua interezza
+  const card = `
+    <div class="card" style="width: 18rem;">
+      <img src=${calciatoreCorrente.immagine} class="card-img-top" alt="..." style="filter: blur(8px);>
+      <div class="card-body">
+      </div>
+    </div>
+  `;
+  calciatoreContainer.innerHTML = card
+
+  //genero gli indizi
+  
+});
