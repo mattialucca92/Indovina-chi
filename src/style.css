@@ -15,7 +15,7 @@
 }
 
 
-body::before {
+body {
   content: "";
   position: fixed;
   top: 0;
@@ -23,5 +23,104 @@ body::before {
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  pointer-events: none;
+  color: white;
+}
+
+/* Layout di base */
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Titolo */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+/* Indizi */
+#indizi-container {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+#indizi-container p {
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+/* Card del calciatore */
+#calciatore-container {
+  margin: 2rem 0;
+}
+
+.card-img-blur {
+  filter: blur(8px);
+  transition: filter 0.5s ease-in-out;
+}
+
+.card-img-clear {
+  filter: none;
+}
+
+/* invio risposta */
+
+#risposta-container {
+  margin-bottom: 1rem;
+  display: flex;         
+  gap: 0.5rem;          
+  align-items: center;  
+  justify-content: center;
+  max-width: 400px;    
+  margin: 0 auto;        
+}
+
+.input-guess {
+  padding: 0.5rem;
+  width: 100%;          
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  flex: 1;              
+}
+
+#invia-risposta {
+  padding: 0.5rem 1rem; 
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap;  
+}
+
+#invia-risposta:hover {
+  background-color: #237226;
+
+}
+
+/* Punteggio */
+#punteggio-container {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* Messaggi */
+#messaggio-container {
+  margin-top: 1rem;
+  color: #ffd700;
+}
+
+/* Bottone Prossimo */
+#next-card {
+  margin-top: 1.5rem;
 }
