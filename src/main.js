@@ -201,7 +201,6 @@ const calciatori = [
 
 let calciatoreCorrente;
 
-
 btnStart.addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -209,11 +208,9 @@ btnStart.addEventListener("click", function (e) {
   const element = document.getElementById("start-game");
   element.style.display = "none";
 
-
   //scelgo un numero randomico nel mio array di oggetti, dopodichè creo una variabile per inserire il giocatore randomico
   const randomCalciatore = Math.floor(Math.random() * calciatori.length);
   const calciatoreCorrente = calciatori[randomCalciatore];
-
 
   //creo una card che visualizza solo l'immagine sfocata del calciatore, una volta che il calciatore verrà indovinato la card verrà mostrata nella sua interezza
   const card = `
@@ -223,8 +220,18 @@ btnStart.addEventListener("click", function (e) {
       </div>
     </div>
   `;
-  calciatoreContainer.innerHTML = card
+  calciatoreContainer.innerHTML = card;
 
   //genero gli indizi
+  const calciatoreIndizi = calciatoreCorrente.indizi;
+  const ul = document.createElement("ul");
+  calciatoreIndizi.forEach((indizio) => {
+    const li = document.createElement("li");
+    li.textContent = indizio;
+    ul.appendChild(li);
+  });
   
+  indiziCalciatore.innerHTML = ""; 
+  indiziCalciatore.appendChild(ul);
+
 });
