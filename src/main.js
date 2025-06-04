@@ -36,7 +36,7 @@ const calciatori = [
     ],
   },
   {
-    nome: "Kylian Mbappé",
+    nome: "Kylian Mbappe",
     squadra: "Paris Saint-Germain",
     nazionalità: "Francia",
     ruolo: "Attaccante",
@@ -72,7 +72,7 @@ const calciatori = [
     ],
   },
   {
-    nome: "Luka Modrić",
+    nome: "Luka Modric",
     squadra: "Real Madrid",
     nazionalità: "Croazia",
     ruolo: "Centrocampista",
@@ -108,7 +108,7 @@ const calciatori = [
     ],
   },
   {
-    nome: "Vinícius Júnior",
+    nome: "Vinicius Junior",
     squadra: "Real Madrid",
     nazionalità: "Brasile",
     ruolo: "Attaccante",
@@ -210,7 +210,7 @@ btnStart.addEventListener("click", function (e) {
 
   //scelgo un numero randomico nel mio array di oggetti, dopodichè creo una variabile per inserire il giocatore randomico
   const randomCalciatore = Math.floor(Math.random() * calciatori.length);
-  const calciatoreCorrente = calciatori[randomCalciatore];
+  calciatoreCorrente = calciatori[randomCalciatore];
 
   //creo una card che visualizza solo l'immagine sfocata del calciatore, una volta che il calciatore verrà indovinato la card verrà mostrata nella sua interezza
   const card = `
@@ -234,4 +234,20 @@ btnStart.addEventListener("click", function (e) {
   indiziCalciatore.innerHTML = ""; 
   indiziCalciatore.appendChild(ul);
 
+});
+
+btnSend.addEventListener("click", function (e) {
+  e.preventDefault();
+  
+  const nomeUtente = rispostaCalciatore.value.trim().toLowerCase();
+  const nomeCalciatore = calciatoreCorrente.nome.toLowerCase();
+  
+  // Controlla se il nome del calciatore include la risposta dell'utente
+  if (nomeCalciatore.includes(nomeUtente)) {
+    messaggioContainer.textContent = `Complimenti, hai indovinato 🎉`;
+    rispostaCalciatore.value = "";
+  } else {
+    messaggioContainer.textContent = `Peccato, riprova!`;
+    rispostaCalciatore.value = "";
+  }
 });
