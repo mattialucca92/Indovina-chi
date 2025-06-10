@@ -23,7 +23,8 @@
       <p>
         1 - Leggi gli indizi <br>
         2 - Hai 3 possibilità di risposta <br>
-        3 - Se indovini al primo tentativo (10 punti), se indovini con 2 tentativi (5 punti) mentre se indovini con 3 tentativi (1 punto)
+        3 - Se indovini al primo tentativo (10 punti), se indovini con 2 tentativi (5 punti) mentre se indovini con 3
+        tentativi (1 punto)
       </p>
     </div>
 
@@ -32,12 +33,12 @@
     </div>
 
     <div id="calciatore-container">
-
+      
     </div>
 
     <div id="risposta-container">
       <label for="risposta-calciatore" class="sr-only">Nome del calciatore</label>
-      <input type="text" id="risposta-calciatore" name="player-guess" placeholder="Nome e Cognome calciatore" required
+      <input type="text" id="risposta-calciatore" name="player-guess" placeholder="Inserisci calciatore" required
         aria-required="true" class="input-guess">
       <button id="invia-risposta" class="btn btn-primary">Invia</button>
 
@@ -45,11 +46,19 @@
 
     <div id="punteggio-container">
 
+      <div class="gioco-container">
+        <div class="card-container" id="calciatoreContainer"></div>
+        <div class="stats">
+          <p><strong>Tentativi:</strong> <span id="tentativi">3</span></p>
+          <p><strong>Punteggio:</strong> <span id="punteggio">0</span></p>
+          <p><strong>Punteggio totale:</strong> <span id="punteggio-totale">0</span></p>
+        </div>
+      </div>
+
+      </p>
     </div>
 
     <div id="messaggio-container">
-
-      <p id="tentativi-rimasti"></p>
 
     </div>
 
