@@ -6,11 +6,11 @@ const rispostaCalciatore = document.getElementById("risposta-calciatore");
 const punteggioContainer = document.getElementById("punteggio-container");
 const tentativi = document.getElementById("tentativi");
 const punteggio = document.getElementById("punteggio");
-const punteggioTotale = document.getElementById("punteggio-totale");
 const messaggioContainer = document.getElementById("messaggio-container");
 const btnStart = document.getElementById("start");
 const btnSend = document.getElementById("invia-risposta");
 const btnNextCard = document.getElementById("next-card");
+const btnRestart = document.getElementById("restart");
 
 const calciatori = [
   {
@@ -206,29 +206,43 @@ let utenteIndovinato = false;
 let tentativiRimasti = 3;
 let punteggioAggiornato = 0;
 
+btnRestart.addEventListener("click", function (e) {
+  e.preventDefault();
+  punteggioAggiornato = 0;
+  tentativiRimasti = 3;
+  utenteIndovinato = false;
+  punteggio.textContent = punteggioAggiornato;
+  rispostaCalciatore.disabled = false;
+  btnSend.disabled = false;
+  btnRestart.style.display = "none";
+  mostraNuovoCalciatore(e);
+});
 
 function mostraNuovoCalciatore(e) {
   e.preventDefault();
 
-  //rimuovo una volta fatto start il div con le regole del gioco
-  const element = document.getElementById("start-game");
-  element.style.display = "none";
+  // reset stato
+  tentativiRimasti = 3;
+  utenteIndovinato = false;
+  rispostaCalciatore.value = ""; // svuota input
+  rispostaCalciatore.disabled = false;
+  btnSend.disabled = false;
+  messaggioContainer.textContent = "";
+  btnRestart.style.display = "none";
 
-  //scelgo un numero randomico nel mio array di oggetti, dopodichè creo una variabile per inserire il giocatore randomico
+  const element = document.getElementById("start-game");
+  if (element) element.style.display = "none";
+
   const randomCalciatore = Math.floor(Math.random() * calciatori.length);
   calciatoreCorrente = calciatori[randomCalciatore];
 
-  //creo una card che visualizza solo l'immagine sfocata del calciatore, una volta che il calciatore verrà indovinato la card verrà mostrata nella sua interezza
   const card = `
     <div class="card" style="width: 18rem;">
-      <img src=${calciatoreCorrente.immagine} class="card-img-top" alt="..." style="filter: blur(8px);>
-      <div class="card-body">
-      </div>
-    </div>
-  `;
+      <img src="${calciatoreCorrente.immagine}" class="card-img-top" alt="..." style="filter: blur(8px);">
+      <div class="card-body"></div>
+    </div>`;
   calciatoreContainer.innerHTML = card;
 
-  //genero gli indizi
   const calciatoreIndizi = calciatoreCorrente.indizi;
   const ul = document.createElement("ul");
   calciatoreIndizi.forEach((indizio) => {
@@ -236,51 +250,41 @@ function mostraNuovoCalciatore(e) {
     li.textContent = indizio;
     ul.appendChild(li);
   });
-
   indiziCalciatore.innerHTML = "";
   indiziCalciatore.appendChild(ul);
 
-  
-  tentativi.textContent = tentativiRimasti
-  punteggio.textContent = punteggioAggiornato
+  tentativi.textContent = tentativiRimasti;
+  punteggio.textContent = punteggioAggiornato;
 }
 
 function inviaRisposta(e) {
   e.preventDefault();
 
-  // Blocca la funzione se l'utente ha già indovinato o ha finito i tentativi
   if (utenteIndovinato || tentativiRimasti === 0) return;
 
   const nomeUtente = rispostaCalciatore.value.trim().toLowerCase();
   const nomeCalciatore = calciatoreCorrente.nome.toLowerCase();
 
   if (nomeCalciatore.includes(nomeUtente)) {
-    utenteIndovinato = true; // blocca risposte successive
-    messaggioContainer.textContent = `Complimenti, hai indovinato 🎉`;
+    utenteIndovinato = true;
+    messaggioContainer.textContent = "Complimenti, hai indovinato 🎉";
 
-    // Assegna il punteggio in base ai tentativi rimasti
-    if (tentativiRimasti === 3) {
-      punteggioAggiornato += 10;
-    } else if (tentativiRimasti === 2) {
-      punteggioAggiornato += 5;
-    } else if (tentativiRimasti === 1) {
-      punteggioAggiornato += 1;
-    }
+    if (tentativiRimasti === 3) punteggioAggiornato += 10;
+    else if (tentativiRimasti === 2) punteggioAggiornato += 5;
+    else if (tentativiRimasti === 1) punteggioAggiornato += 1;
 
     punteggio.textContent = punteggioAggiornato;
 
-    // Mostra la card completa
     const cardGiocatore = `
       <div class="card" style="width: 18rem;">
-        <img src=${calciatoreCorrente.immagine} class="card-img-top" alt="...">
+        <img src="${calciatoreCorrente.immagine}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${calciatoreCorrente.nome}</h5>
           <p class="card-text">${calciatoreCorrente.squadra}</p>
           <p class="card-text">${calciatoreCorrente.nazionalità}</p>
           <p class="card-text">${calciatoreCorrente.ruolo}</p>
         </div>
-      </div>
-    `;
+      </div>`;
     calciatoreContainer.innerHTML = cardGiocatore;
   } else {
     tentativiRimasti--;
@@ -288,36 +292,37 @@ function inviaRisposta(e) {
 
     if (tentativiRimasti === 0) {
       messaggioContainer.textContent = `Hai finito i tentativi 😢 Il calciatore era ${calciatoreCorrente.nome}`;
-      // Mostra comunque la card
       const cardGiocatore = `
         <div class="card" style="width: 18rem;">
-          <img src=${calciatoreCorrente.immagine} class="card-img-top" alt="...">
+          <img src="${calciatoreCorrente.immagine}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${calciatoreCorrente.nome}</h5>
             <p class="card-text">${calciatoreCorrente.squadra}</p>
             <p class="card-text">${calciatoreCorrente.nazionalità}</p>
             <p class="card-text">${calciatoreCorrente.ruolo}</p>
           </div>
-        </div>
-      `;
+        </div>`;
       calciatoreContainer.innerHTML = cardGiocatore;
+
+      // Disabilita input e mostra "Ricomincia"
+      rispostaCalciatore.disabled = true;
+      btnSend.disabled = true;
+      btnRestart.style.display = "inline-block";
     } else {
-      messaggioContainer.textContent = `Peccato, riprova!`;
+      messaggioContainer.textContent = "Peccato, riprova!";
     }
   }
 
   rispostaCalciatore.value = "";
 }
 
-
 btnStart.addEventListener("click", mostraNuovoCalciatore);
 btnSend.addEventListener("click", inviaRisposta);
 
 btnNextCard.addEventListener("click", function (e) {
   e.preventDefault();
-  utenteIndovinato = false;
-  rispostaCalciatore.value = "";
-  messaggioContainer.textContent = "";
-  mostraNuovoCalciatore(e);
+  if (tentativiRimasti === 0 || utenteIndovinato) {
+    mostraNuovoCalciatore(e);
+    messaggioContainer.textContent = "";
+  }
 });
-

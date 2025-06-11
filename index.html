@@ -18,7 +18,7 @@
     <h1>Indovina il calciatore</h1>
 
     <div id="start-game">
-      <button id="start" type="button" class="btn btn-primary">Start</button>
+      <button id="start" type="button">Start</button>
       <h2>Come si gioca</h2><br>
       <p>
         1 - Leggi gli indizi <br>
@@ -40,7 +40,7 @@
       <label for="risposta-calciatore" class="sr-only">Nome del calciatore</label>
       <input type="text" id="risposta-calciatore" name="player-guess" placeholder="Inserisci calciatore" required
         aria-required="true" class="input-guess">
-      <button id="invia-risposta" class="btn btn-primary">Invia</button>
+      <button id="invia-risposta">Invia</button>
 
     </div>
 
@@ -51,7 +51,6 @@
         <div class="stats">
           <p><strong>Tentativi:</strong> <span id="tentativi">3</span></p>
           <p><strong>Punteggio:</strong> <span id="punteggio">0</span></p>
-          <p><strong>Punteggio totale:</strong> <span id="punteggio-totale">0</span></p>
         </div>
       </div>
 
@@ -62,8 +61,10 @@
 
     </div>
 
-    <button id="next-card" class="btn btn-primary">Prossimo calciatore</button>
-
+    <div class="btn">
+      <button id="next-card">Prossimo calciatore</button>
+      <button id="restart" style="display:none;">Ricomincia</button>
+  </div>
   </main>
 
   <script type="module" src="/src/main.js"></script>

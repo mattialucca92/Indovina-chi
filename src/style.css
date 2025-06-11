@@ -124,3 +124,84 @@ h1 {
 #next-card {
   margin-top: 1.5rem;
 }
+
+#start {
+  padding: 4px 8px; /* Più grande degli altri */
+  background-color: #2196F3; /* Blu vibrante */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block; /* Per centrarlo se usato da solo */
+  margin: 0 auto; /* Centratura orizzontale */
+}
+
+/* Effetto hover */
+#start:hover {
+  background-color: #0b7dda;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Effetto click */
+#start:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: flex;
+  gap: 1rem; /* Spaziatura tra i bottoni */
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Stile specifico per il bottone "Prossimo calciatore" */
+#next-card {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile specifico per il bottone "Ricomincia" */
+#restart {
+  background-color: #f44336; /* Rosso */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Effetti al hover */
+#next-card:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#restart:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Effetto al click */
+.btn button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
