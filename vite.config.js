@@ -2,9 +2,10 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
-  base: "/Indovina-chi/", // Nome del tuo repository
+  base: "./", // Usa percorsi relativi invece di assoluti
   build: {
-    outDir: "docs", // GitHub Pages legge da /docs
+    outDir: "docs", // Usa docs invece di dist per GitHub Pages
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
