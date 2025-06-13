@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
-  base: "/Indovina-chi/",
+  base: "./", // Usa percorsi relativi
   build: {
     outDir: "docs",
     emptyOutDir: true,
@@ -11,12 +11,6 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
       },
-      output: {
-        assetFileNames: "assets/[name].[hash][extname]",
-      },
     },
-  },
-  server: {
-    open: true,
   },
 });
