@@ -18,7 +18,7 @@ const calciatori = [
     squadra: "Inter Miami",
     nazionalità: "Argentina",
     ruolo: "Attaccante",
-    immagine: "/img/messi.jpg",
+    immagine: "./img/messi.jpg",
     indizi: [
       "Ha vinto più Palloni d'Oro di chiunque altro.",
       "Ha giocato per il Barcellona per quasi tutta la carriera.",
@@ -30,7 +30,7 @@ const calciatori = [
     squadra: "Al-Nassr",
     nazionalità: "Portogallo",
     ruolo: "Attaccante",
-    immagine: "/img/ronaldo.jpg",
+    immagine: "./img/ronaldo.jpg",
     indizi: [
       "Ha giocato nella juventus",
       "Ha vinto 5 Palloni d'Oro e giocato in Premier League, La Liga e Serie A.",
@@ -42,7 +42,7 @@ const calciatori = [
     squadra: "Paris Saint-Germain",
     nazionalità: "Francia",
     ruolo: "Attaccante",
-    immagine: "/img/mbappe.jpg",
+    immagine: "./img/mbappe.jpg",
     indizi: [
       "Ha vinto un Mondiale nel 2018",
       "È noto per la sua velocità pazzesca (oltre 36 km/h) e per aver segnato una tripletta in una finale di Mondiale.",
@@ -54,7 +54,7 @@ const calciatori = [
     squadra: "Manchester City",
     nazionalità: "Norvegia",
     ruolo: "Attaccante",
-    immagine: "/img/haaland.jpg",
+    immagine: "./img/haaland.jpg",
     indizi: [
       "soprannominato 'Cyborg' per la sua forza fisica.",
       "È figlio di un ex calciatore del Leeds.",
@@ -66,7 +66,7 @@ const calciatori = [
     squadra: "Manchester City",
     nazionalità: "Belgio",
     ruolo: "Centrocampista",
-    immagine: "/img/debruyne.jpg",
+    immagine: "./img/debruyne.jpg",
     indizi: [
       "ha vinto 5 Premier League",
       "Detiene il record di assist in una stagione di Premier League (20)",
@@ -78,7 +78,7 @@ const calciatori = [
     squadra: "Real Madrid",
     nazionalità: "Croazia",
     ruolo: "Centrocampista",
-    immagine: "/img/modric.jpg",
+    immagine: "./img/modric.jpg",
     indizi: [
       " vincitore del Pallone d'Oro 2018",
       "È l'unico giocatore a vincere il Pallone d'Oro spezzando il dominio di Messi e Ronaldo",
@@ -90,7 +90,7 @@ const calciatori = [
     squadra: "Barcellona",
     nazionalità: "Polonia",
     ruolo: "Attaccante",
-    immagine: "/img/lewandowski.jpg",
+    immagine: "./img/lewandowski.jpg",
     indizi: [
       "Ha segnato 5 gol in 9 minuti in Bundesliga.",
       "Detiene il record di gol in una stagione di Bundesliga (41).",
@@ -102,7 +102,7 @@ const calciatori = [
     squadra: "Bayern Monaco",
     nazionalità: "Inghilterra",
     ruolo: "Attaccante",
-    immagine: "/img/kane.jpg",
+    immagine: "./img/kane.jpg",
     indizi: [
       "miglior marcatore della storia dei Three Lions",
       "Ha segnato 30+ gol in 6 stagioni di Premier League con il Tottenham",
@@ -114,7 +114,7 @@ const calciatori = [
     squadra: "Real Madrid",
     nazionalità: "Brasile",
     ruolo: "Attaccante",
-    immagine: "/img/vinicius.jpg",
+    immagine: "./img/vinicius.jpg",
     indizi: [
       "Noto per la sua velocità e dribbling. Ha vinto la Champions League a 22 anni.",
       "Nel 2022 ha segnato il gol decisivo in finale di Champions League",
@@ -127,7 +127,7 @@ const calciatori = [
     squadra: "Al Hilal",
     nazionalità: "Brasile",
     ruolo: "Attaccante",
-    immagine: "/img/neymar.jpg",
+    immagine: "./img/neymar.jpg",
     indizi: [
       "il trasferimento più costoso della storia",
       "Giocava nel PSG ed è famoso per i suoi dribbling.",
@@ -140,7 +140,7 @@ const calciatori = [
     squadra: "Barcellona",
     nazionalità: "Spagna",
     ruolo: "Centrocampista",
-    immagine: "/img/pedri.jpg",
+    immagine: "./img/pedri.jpg",
     indizi: [
       "Considerato l'erede di Iniesta",
       "A 18 anni ha giocato 73 partite in una stagione tra club e nazionale",
@@ -153,7 +153,7 @@ const calciatori = [
     squadra: "Real Madrid",
     nazionalità: "Inghilterra",
     ruolo: "Centrocampista",
-    immagine: "/img/bellingham.jpg",
+    immagine: "./img/bellingham.jpg",
     indizi: [
       "È il più giovane capitano della storia del Borussia Dortmund.",
       "Nel 2023 ha segnato gol in 4 partite consecutive di Champions League",
@@ -166,7 +166,7 @@ const calciatori = [
     squadra: "Newcastle",
     nazionalità: "Italia",
     ruolo: "Centrocampista",
-    immagine: "/img/tonali.jpg",
+    immagine: "./img/tonali.jpg",
     indizi: [
       "Soprannominato 'Il nuovo Pirlo' per il suo stile di gioco.",
       "Ha vinto lo Scudetto col Milan dopo 11 anni.",
@@ -179,7 +179,7 @@ const calciatori = [
     squadra: "Napoli",
     nazionalità: "Nigeria",
     ruolo: "Attaccante",
-    immagine: "/img/osimhen.jpg",
+    immagine: "./img/osimhen.jpg",
     indizi: [
       "Capocannoniere nel 2023 e noto per la sua esplosività",
       "Ha segnato 31 gol in una stagione col Napoli, vincendo lo Scudetto dopo 33 anni",
@@ -191,7 +191,7 @@ const calciatori = [
     squadra: "Paris Saint-Germain",
     nazionalità: "Italia",
     ruolo: "Portiere",
-    immagine: "/img/donnarumma.jpg",
+    immagine: "./img/donnarumma.jpg",
     indizi: [
       "Ha vinto gli Europei 2020",
       "A 16 anni ha esordito in Serie A.",
